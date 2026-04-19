@@ -12,3 +12,4 @@
 - Interface rendue non redimensionnable (taille de fenetre fixe).
 - Bouton "A propos" supprime et remplace par un onglet "A propos".
 - Informations de presentation integrees directement dans l'onglet "A propos".
+- README.md ajoute a la racine avec instructions d'installation et d'execution.
