@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aide HT-TTC</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --fond: #f6f1e8;
+      --carte: #fffaf2;
+      --texte: #1f2933;
+      --accent: #a44a3f;
+      --accent-fonce: #6e312a;
+      --bordure: #e0d2bd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(164, 74, 63, 0.14), transparent 28%),
+        linear-gradient(180deg, #f8f4ed 0%, var(--fond) 100%);
+      color: var(--texte);
+      line-height: 1.6;
+    }
+
+    .conteneur {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(164, 74, 63, 0.94), rgba(110, 49, 42, 0.95));
+      color: #fff8f0;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 16px 40px rgba(110, 49, 42, 0.18);
+    }
+
+    h1, h2 {
+      margin-top: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: 0.02em;
+    }
+
+    .grille {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .carte {
+      background: var(--carte);
+      border: 1px solid var(--bordure);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(31, 41, 51, 0.06);
+    }
+
+    .etapes {
+      padding-left: 20px;
+    }
+
+    .formule {
+      display: inline-block;
+      margin: 6px 0;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: #f2e3d3;
+      color: var(--accent-fonce);
+      font-weight: 700;
+    }
+
+    .note {
+      margin-top: 24px;
+      padding: 14px 16px;
+      border-left: 4px solid var(--accent);
+      background: rgba(164, 74, 63, 0.08);
+      border-radius: 10px;
+    }
+
+    .maquette {
+      margin-top: 24px;
+      background: linear-gradient(180deg, #fff8ef 0%, #f4e6d6 100%);
+      border: 1px solid var(--bordure);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 14px 32px rgba(31, 41, 51, 0.08);
+    }
+
+    .barre-titre {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      color: #735143;
+      font-size: 14px;
+    }
+
+    .pastille {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #d7a27f;
+    }
+
+    .pastille:nth-child(2) {
+      background: #e4c06d;
+    }
+
+    .pastille:nth-child(3) {
+      background: #87b37a;
+    }
+
+    .maquette-grille {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 18px;
+    }
+
+    .fenetre {
+      background: #fffdf9;
+      border: 1px solid #ead7bf;
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .onglets {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .onglet,
+    .onglet-actif {
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      border: 1px solid #d9c3a7;
+      background: #f5e5d0;
+      color: #7d5d4b;
+    }
+
+    .onglet-actif {
+      background: var(--accent);
+      color: #fff9f3;
+      border-color: var(--accent);
+    }
+
+    .ligne-saisie {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .champ-demo {
+      border: 1px solid #d8c2a7;
+      background: #fff;
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-weight: 700;
+      color: #5d4538;
+      text-align: right;
+    }
+
+    .bouton-demo {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: #efe0cd;
+      border: 1px solid #dbc4aa;
+      color: #6a4a3b;
+      font-weight: 700;
+    }
+
+    .mini-legende {
+      margin: 0;
+      color: #72594d;
+      font-size: 14px;
+    }
+
+    .exemples {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .exemple {
+      background: #fffdf9;
+      border: 1px solid #e7d5c0;
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .etiquette {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #f2e3d3;
+      color: var(--accent-fonce);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .resultat {
+      margin: 8px 0 0;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent-fonce);
+    }
+
+    @media (max-width: 720px) {
+      .maquette-grille {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    code {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      background: rgba(31, 41, 51, 0.08);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <main class="conteneur">
+    <section class="hero">
+      <h1>Aide du calculateur HT-TTC</h1>
+      <p>Cette aide explique rapidement comment utiliser l'application pour convertir un montant hors taxes en toutes taxes comprises, ou l'inverse, avec un taux de TVA personnalisable.</p>
+    </section>
+
+    <section class="grille">
+      <article class="carte">
+        <h2>Utilisation rapide</h2>
+        <ol class="etapes">
+          <li>Saisissez un montant dans le champ HT pour obtenir automatiquement le TTC.</li>
+          <li>Ou saisissez directement le TTC pour recalculer le HT.</li>
+          <li>Modifiez le taux dans l'onglet Parametres si besoin.</li>
+        </ol>
+      </article>
+
+      <article class="carte">
+        <h2>Formules</h2>
+        <p class="formule">TTC = HT × (1 + TVA / 100)</p>
+        <p class="formule">HT = TTC / (1 + TVA / 100)</p>
+      </article>
+
+      <article class="carte">
+        <h2>Saisie des nombres</h2>
+        <p>Les champs numeriques n'acceptent que les nombres. Vous pouvez utiliser une virgule ou un point pour les decimales, par exemple <code>12,50</code> ou <code>12.50</code>.</p>
+      </article>
+
+      <article class="carte">
+        <h2>Points d'attention</h2>
+        <p>Un taux de TVA de <code>-100</code> est interdit, car il rend le calcul impossible. Si une valeur est incomplete, le calcul attend une saisie valide avant de mettre a jour le resultat.</p>
+      </article>
+    </section>
+
+    <section class="maquette">
+      <div class="barre-titre">
+        <span class="pastille"></span>
+        <span class="pastille"></span>
+        <span class="pastille"></span>
+        <span>Vue simplifiee de l'application</span>
+      </div>
+
+      <div class="maquette-grille">
+        <div class="fenetre">
+          <div class="onglets">
+            <span class="onglet-actif">Calcul</span>
+            <span class="onglet">Parametres</span>
+            <span class="onglet">A propos</span>
+          </div>
+          <div class="ligne-saisie">
+            <strong>Prix HT (€)</strong>
+            <span class="champ-demo">100,00</span>
+          </div>
+          <div class="ligne-saisie">
+            <strong>Prix TTC (€)</strong>
+            <span class="champ-demo">120,00</span>
+          </div>
+          <span class="bouton-demo">Aide</span>
+        </div>
+
+        <div class="fenetre">
+          <div class="onglets">
+            <span class="onglet">Calcul</span>
+            <span class="onglet-actif">Parametres</span>
+          </div>
+          <div class="ligne-saisie">
+            <strong>Taux de TVA (%)</strong>
+            <span class="champ-demo">20</span>
+          </div>
+          <p class="mini-legende">Le taux peut etre modifie a tout moment. Les calculs se mettent a jour automatiquement des qu'une valeur valide est saisie.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="exemples">
+      <article class="exemple">
+        <span class="etiquette">Exemple 1</span>
+        <h2>Calcul HT vers TTC</h2>
+        <p>Montant HT saisi : <code>100</code></p>
+        <p>Taux de TVA : <code>20</code></p>
+        <p>Calcul applique : <code>100 × (1 + 20 / 100)</code></p>
+        <p class="resultat">TTC = 120,00 €</p>
+      </article>
+
+      <article class="exemple">
+        <span class="etiquette">Exemple 2</span>
+        <h2>Calcul TTC vers HT</h2>
+        <p>Montant TTC saisi : <code>240</code></p>
+        <p>Taux de TVA : <code>20</code></p>
+        <p>Calcul applique : <code>240 / (1 + 20 / 100)</code></p>
+        <p class="resultat">HT = 200,00 €</p>
+      </article>
+
+      <article class="exemple">
+        <span class="etiquette">Exemple 3</span>
+        <h2>Avec un autre taux</h2>
+        <p>Montant HT saisi : <code>89,90</code></p>
+        <p>Taux de TVA : <code>5,5</code></p>
+        <p>Calcul applique : <code>89,90 × (1 + 5,5 / 100)</code></p>
+        <p class="resultat">TTC = 94,84 €</p>
+      </article>
+    </section>
+
+    <p class="note">Astuce : utilisez l'onglet A propos pour retrouver les informations de contact et le site associe a l'application.</p>
+  </main>
+</body>
+</html>

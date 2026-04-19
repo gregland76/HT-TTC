@@ -1,6 +1,9 @@
 # Historique des modifications
 
 ## 2026-04-19
+- Aide HTML enrichie avec maquette visuelle de l interface et exemples de calcul concrets.
+- Fichier d aide HTML ajoute et bouton Aide integre dans l interface pour ouvrir la documentation locale.
+- Validation de saisie ajoutee sur les champs numeriques pour empecher l entree de texte non numerique dans HT, TTC et TVA.
 - Creation des dossiers de structure du projet : src, docs, tests, history.
 - Analyse initiale du script HT TTC.py preparee.
 - Calcul automatique ajoute pendant la saisie (sans bouton) pour HT -> TTC.

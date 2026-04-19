@@ -13,6 +13,7 @@ Ce depot contient un calculateur HT/TTC autonome, pense pour des besoins quotidi
 - Calcul HT -> TTC en temps reel pendant la saisie.
 - Calcul TTC -> HT en temps reel pendant la saisie.
 - Taux de TVA configurable (valeur par defaut: 20).
+- Bouton d'aide ouvrant une documentation HTML locale.
 - Interface avec onglets:
   - `Calcul`
   - `Parametres`
@@ -41,6 +42,7 @@ python "HT TTC.py"
 
 ```text
 HT TTC.py
+aide.html
 README.md
 history/
   CHANGELOG.md
