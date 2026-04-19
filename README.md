@@ -1,6 +1,12 @@
 # HT-TTC
 
-Application Python (Tkinter) pour calculer automatiquement les prix **HT** et **TTC** selon un taux de **TVA**.
+Application Python (Tkinter) pour calculer automatiquement les prix HT et TTC selon un taux de TVA.
+
+HT-TTC est une petite application de bureau en Python avec Tkinter qui permet de convertir rapidement un prix HT en prix TTC, ou l'inverse, en appliquant un taux de TVA personnalisable. Le projet vise un usage simple et immediat, avec une interface legere organisee en onglets pour le calcul, les parametres et les informations generales.
+
+## Description du depot
+
+Ce depot contient un calculateur HT/TTC autonome, pense pour des besoins quotidiens de facturation, de verification tarifaire ou de simulation rapide. L'application met a jour les montants en temps reel pendant la saisie et ne depend d'aucune bibliotheque externe autre que Tkinter, generalement inclus avec Python.
 
 ## Fonctionnalites
 
@@ -25,16 +31,19 @@ Depuis la racine du projet:
 python "HT TTC.py"
 ```
 
+## Usage
+
+1. Saisir un montant HT pour obtenir automatiquement le TTC.
+2. Ou saisir un montant TTC pour recalculer automatiquement le HT.
+3. Ajuster le taux de TVA depuis l'onglet Parametres.
+
 ## Structure du projet
 
 ```text
 HT TTC.py
 README.md
-docs/
 history/
   CHANGELOG.md
-src/
-tests/
 ```
 
 ## Historique

@@ -13,3 +13,9 @@
 - Bouton "A propos" supprime et remplace par un onglet "A propos".
 - Informations de presentation integrees directement dans l'onglet "A propos".
 - README.md ajoute a la racine avec instructions d'installation et d'execution.
+- README.md enrichi avec une description de depot plus complete et une section d'usage.
+- Description courte ajoutee en tete du README.
+- Description courte du README remplacee par le texte demande pour le depot.
+- Structure du projet corrigee dans la documentation pour correspondre au contenu reel du depot.
+- Fichier .gitignore ajoute pour exclure les caches Python du versionnement.
+- Script principal refactore avec un point d'entree main() pour eviter l'execution de l'interface a l'import.
